@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nDE-jP-cAV">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="M1c-lt-8cz">
+            <objects>
+                <viewController id="nDE-jP-cAV" customClass="ViewController" customModule="HSFileDownloader" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JjK-jb-c2y">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="68" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="5Zc-pj-wgS">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="gray" indentationWidth="10" reuseIdentifier="TrackCell" rowHeight="62" id="fgN-8p-olP" customClass="TrackCell" customModule="HSFileDownloader" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="22" width="414" height="62"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fgN-8p-olP" id="PID-I5-jCs">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="61.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hjt-Ki-vHe">
+                                                    <rect key="frame" x="14" y="20" width="278" height="20"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <progressView hidden="YES" opaque="NO" tag="40" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Txu-lm-JBq">
+                                                    <rect key="frame" x="14" y="52" width="278" height="2"/>
+                                                </progressView>
+                                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WZM-be-F4S">
+                                                    <rect key="frame" x="358" y="12" width="48" height="30"/>
+                                                    <state key="normal" title="Cancel">
+                                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="cancelTapped:" destination="fgN-8p-olP" eventType="touchUpInside" id="CFj-6E-hXh"/>
+                                                    </connections>
+                                                </button>
+                                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yuk-x0-2xE">
+                                                    <rect key="frame" x="308" y="12" width="42" height="30"/>
+                                                    <state key="normal" title="Pause">
+                                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="pauseOrResumeTapped:" destination="fgN-8p-olP" eventType="touchUpInside" id="hBZ-kq-Wes"/>
+                                                    </connections>
+                                                </button>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100% of 1.35MB" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z5R-XN-cS4">
+                                                    <rect key="frame" x="321" y="44" width="84" height="14"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <color key="textColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vSW-qX-Tk5">
+                                                    <rect key="frame" x="328" y="9" width="69" height="30"/>
+                                                    <state key="normal" title="Download">
+                                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="downloadTapped:" destination="fgN-8p-olP" eventType="touchUpInside" id="5v9-ic-a8b"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="tintColor" red="0.98624604940000005" green="0.0071207880970000003" blue="0.027434188870000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="Txu-lm-JBq" firstAttribute="leading" secondItem="PID-I5-jCs" secondAttribute="leading" constant="14" id="AEF-j0-VJc"/>
+                                                <constraint firstAttribute="trailing" secondItem="vSW-qX-Tk5" secondAttribute="trailing" constant="17" id="Axi-Af-0DW"/>
+                                                <constraint firstItem="Yuk-x0-2xE" firstAttribute="top" secondItem="PID-I5-jCs" secondAttribute="topMargin" constant="1" id="H4e-DL-78C"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Txu-lm-JBq" secondAttribute="trailing" constant="102" id="IOJ-4s-V1E"/>
+                                                <constraint firstItem="WZM-be-F4S" firstAttribute="leading" secondItem="Yuk-x0-2xE" secondAttribute="trailing" constant="8" id="KgE-GK-1sJ"/>
+                                                <constraint firstItem="WZM-be-F4S" firstAttribute="top" secondItem="PID-I5-jCs" secondAttribute="topMargin" constant="1" id="Neh-Tx-4H1"/>
+                                                <constraint firstAttribute="trailing" secondItem="WZM-be-F4S" secondAttribute="trailing" constant="8" id="Nwx-YC-X2r"/>
+                                                <constraint firstItem="hjt-Ki-vHe" firstAttribute="leading" secondItem="PID-I5-jCs" secondAttribute="leading" constant="14" id="WE2-Pi-m9E"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="hjt-Ki-vHe" secondAttribute="trailing" constant="102" id="Zmz-5b-vAV"/>
+                                                <constraint firstItem="Txu-lm-JBq" firstAttribute="top" secondItem="hjt-Ki-vHe" secondAttribute="bottom" constant="12" id="aYq-UD-57a"/>
+                                                <constraint firstItem="WZM-be-F4S" firstAttribute="centerY" secondItem="Yuk-x0-2xE" secondAttribute="centerY" id="iPO-vG-5MB"/>
+                                                <constraint firstAttribute="trailing" secondItem="z5R-XN-cS4" secondAttribute="trailing" constant="9" id="n4a-D2-JVP"/>
+                                                <constraint firstItem="Txu-lm-JBq" firstAttribute="centerY" secondItem="z5R-XN-cS4" secondAttribute="centerY" constant="2" id="qPC-1o-8dZ"/>
+                                                <constraint firstItem="vSW-qX-Tk5" firstAttribute="top" secondItem="PID-I5-jCs" secondAttribute="top" constant="9" id="snP-e7-8y9"/>
+                                                <constraint firstItem="hjt-Ki-vHe" firstAttribute="top" secondItem="PID-I5-jCs" secondAttribute="top" constant="20" id="vwx-RD-rGq"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cancelButton" destination="WZM-be-F4S" id="Sc2-Cr-wkf"/>
+                                            <outlet property="downloadButton" destination="vSW-qX-Tk5" id="Wzq-ls-OKR"/>
+                                            <outlet property="pauseButton" destination="Yuk-x0-2xE" id="Day-MV-bJf"/>
+                                            <outlet property="progressLabel" destination="z5R-XN-cS4" id="zrB-xu-Rha"/>
+                                            <outlet property="progressView" destination="Txu-lm-JBq" id="hOK-kv-1ax"/>
+                                            <outlet property="titleLabel" destination="hjt-Ki-vHe" id="5Wv-Tf-Jnc"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="nDE-jP-cAV" id="8gV-hD-vIW"/>
+                                    <outlet property="delegate" destination="nDE-jP-cAV" id="8SS-AV-7On"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="5Zc-pj-wgS" firstAttribute="leading" secondItem="6qw-VR-Bio" secondAttribute="leading" id="7Dm-gZ-2xr"/>
+                            <constraint firstItem="6qw-VR-Bio" firstAttribute="trailing" secondItem="5Zc-pj-wgS" secondAttribute="trailing" id="cSr-zl-V7T"/>
+                            <constraint firstItem="5Zc-pj-wgS" firstAttribute="top" secondItem="6qw-VR-Bio" secondAttribute="top" id="va4-65-IS0"/>
+                            <constraint firstItem="6qw-VR-Bio" firstAttribute="bottom" secondItem="5Zc-pj-wgS" secondAttribute="bottom" id="xwm-f3-Ats"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6qw-VR-Bio"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="search" id="4Vr-b4-XG4"/>
+                    <connections>
+                        <outlet property="tableView" destination="5Zc-pj-wgS" id="dcG-Ch-p6C"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TeQ-Pb-XqZ" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="774" y="-308"/>
+        </scene>
+    </scenes>
+</document>
